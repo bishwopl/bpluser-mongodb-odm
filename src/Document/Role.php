@@ -13,7 +13,6 @@ use Doctrine\ODM\MongoDB\Types\Type;
  */
 #[ODM\Document(collection: "acl_roles")]
 #[ODM\Index(keys: ["name" => "desc"], options: ["unique" => true])]
-#[ODM\Index(keys: ["name" => "roleId"], options: ["unique" => true])]
 class Role implements RoleInterface
 {
     #[ODM\Id(strategy: "auto")]

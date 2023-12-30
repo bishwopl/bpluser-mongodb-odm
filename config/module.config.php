@@ -33,6 +33,7 @@ return [
             \BplUser\Mapper\UserPasswordResetMapper::class => Mapper\Factory\UserPasswordResetMapperFactory::class,
             \BplUser\Form\ChangeProfile::class => Form\Factory\ChangeProfileFormFactory::class,
             \BplUser\Form\Register::class => Form\Factory\RegisterFormFactory::class,
+            \CirclicalUser\Service\AuthenticationService::class => Service\AuthenticationServiceFactory::class,
         ],
     ],
     'doctrine' => [
