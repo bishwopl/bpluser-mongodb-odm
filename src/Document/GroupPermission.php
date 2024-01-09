@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CirclicalUser\Entity;
+namespace BplUserMongoDbODM\Document;
 
 use CirclicalUser\Provider\GroupPermissionInterface;
 use CirclicalUser\Provider\RoleInterface;
@@ -26,7 +26,7 @@ class GroupPermission implements GroupPermissionInterface
     #[ODM\Field(type:"string")]
     private string $resource_id;
 
-    #[ODM\ReferenceOne(targetDocument: "CirclicalUser\Entity\Role")]
+    #[ODM\ReferenceOne(targetDocument: Role::class)]
     private RoleInterface $role;
 
     #[ODM\Field(type:"collection")]
@@ -34,7 +34,6 @@ class GroupPermission implements GroupPermissionInterface
 
     public function __construct(RoleInterface $role, string $resourceClass, string $resourceId, array $actions)
     {
-        $this->id = null;
         $this->role = $role;
         $this->resource_class = $resourceClass;
         $this->resource_id = $resourceId;
